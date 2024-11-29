@@ -4,6 +4,7 @@ function App() {
   return (
     <div>
       <Button label="Click me" onClick={() => {}} />
+      <Button label="Click me" onClick={() => {}} />
     </div>
   );
 }
