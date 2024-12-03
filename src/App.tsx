@@ -1,11 +1,20 @@
-import { Button } from '@/components/Button/Button';
+import UserProvider from './hooks/contexts/UserContext';
+import HomeScreen from './routes/Home';
+import { Route, Routes } from 'react-router-dom';
+import AboutScreen from './routes/About';
 
 function App() {
   return (
-    <div>
-      <Button label="Click me" onClick={() => {}} />
-      <Button label="Click me" onClick={() => {}} />
-    </div>
+    <UserProvider>
+      <div>
+        {/* <HomeScreen /> */}
+
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+        </Routes>
+      </div>
+    </UserProvider>
   );
 }
 
