@@ -1,17 +1,16 @@
 import { apiURL } from '@/utils/baseurl';
-import axios, { AxiosResponse } from 'axios';
-import { LoginFormProps } from '../types/AuthTypes/AuthTypes';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
-export const fetchLogin = async (data: LoginFormProps) => {
+export const getAllThreads = async (token: string) => {
   try {
-    const res: AxiosResponse = await axios.post(apiURL + 'auth/login', data, {
+    const res: AxiosResponse = await axios.get(apiURL + 'thread', {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     });
 
-    // console.log('result', res);
-    return res.data;
+    console.log('result', res);
+    return res.data.threads;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error('Axios Error:', error.response?.data || error.message);
