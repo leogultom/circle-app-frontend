@@ -1,5 +1,5 @@
 import { apiURL } from '@/utils/baseurl';
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 export const getAllThreads = async (token: string) => {
   try {

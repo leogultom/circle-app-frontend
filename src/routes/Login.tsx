@@ -13,7 +13,7 @@ function LoginPage() {
     if (token) {
       navigate('/');
     }
-  }, []);
+  });
 
   return (
     <main

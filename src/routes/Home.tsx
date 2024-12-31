@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '@components/Sidebar';
-import ForgotPass from '@authComponents/forgot-pass';
-import { getAllUsers } from '@/features/dashboard/services/users.services';
+// import { Link } from 'react-router-dom';
+// import Sidebar from '@components/Sidebar';
+// import ForgotPass from '@authComponents/forgot-pass';
+// import { getAllUsers } from '@/features/dashboard/services/users.services';
 import { getAllThreads } from '@/features/dashboard/services/thread.services';
 import { ThreadsType } from '@/types/threads.types';
 import { Card } from '@chakra-ui/react';
@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 // let formProps: RegisterFormProps;
 
 const HomeScreen: React.FC = () => {
-  const { user, setUser } = useUserStore();
+  const { user } = useUserStore();
 
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const HomeScreen: React.FC = () => {
   }, []);
 
   const retrieveAllThreads = async () => {
-    const token = Cookies.get('token');
+    const token = Cookies.get('token') as string;
     console.log('token :', token);
     // getAllUsers(token);
     try {

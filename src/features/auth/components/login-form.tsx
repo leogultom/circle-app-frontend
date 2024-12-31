@@ -4,7 +4,6 @@ import { z } from 'zod';
 import { fetchLogin } from '../services/auth-service';
 import useUserStore from '@/hooks/userStore';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { COLOR_GRAY, COLOR_PRIMARY, COLOR_WHITE } from '@/utils/constants';
 import { Box } from '@chakra-ui/react';

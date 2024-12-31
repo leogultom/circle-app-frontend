@@ -10,7 +10,9 @@ export type UserContextType = {
   setUser: (user: UserType) => void;
 };
 
-export const UserContext = createContext<UserContextType>();
+export const UserContext = createContext<UserContextType>(
+  {} as UserContextType
+);
 
 const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<UserType>({ name: 'Leo G', age: 20 });
