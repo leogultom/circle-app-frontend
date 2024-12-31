@@ -84,7 +84,7 @@ export function RegisterForm() {
           fontSize: 14,
         }}
       >
-        Create
+        Create Account
       </button>
     </form>
   );
